@@ -31,6 +31,7 @@
 		DB66608E2CAA073C00A7F349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB66608C2CAA073C00A7F349 /* LaunchScreen.storyboard */; };
 		DBDCECC72CB0006C00C5B6A4 /* Extention+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDCECC62CB0006C00C5B6A4 /* Extention+UIView.swift */; };
 		DBDCECCA2CB0010A00C5B6A4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDCECC92CB0010A00C5B6A4 /* Constant.swift */; };
+		DBE35C842CB5EF2F008342EA /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE35C832CB5EF2F008342EA /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		DB66608F2CAA073C00A7F349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBDCECC62CB0006C00C5B6A4 /* Extention+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+UIView.swift"; sourceTree = "<group>"; };
 		DBDCECC92CB0010A00C5B6A4 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		DBE35C832CB5EF2F008342EA /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				DB1CE6CC2CAEAA620024FCDF /* AudioTrack.swift */,
 				DB1CE6CE2CAEAA6E0024FCDF /* Artist.swift */,
 				DB1CE6D02CAEAA780024FCDF /* UserProfile.swift */,
+				DBE35C832CB5EF2F008342EA /* AuthResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				DB1CE6C32CAEA9CF0024FCDF /* SearchResultViewController.swift in Sources */,
 				DBDCECCA2CB0010A00C5B6A4 /* Constant.swift in Sources */,
 				DB1CE6C72CAEAA130024FCDF /* APICaller.swift in Sources */,
+				DBE35C842CB5EF2F008342EA /* AuthResponse.swift in Sources */,
 				DB1CE6BD2CAEA98F0024FCDF /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
