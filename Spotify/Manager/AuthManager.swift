@@ -14,10 +14,8 @@ final class AuthManager {
     private init() {}
     
     public var signInURL: URL? {
-        let scopes = "user-read-private"
-        let redirectURI = "https://www.google.com"
         let base = "https://accounts.spotify.com/authorize"
-        let string = "\(base)?response_type=code&client_id=\(Constant.clientID)&scope=\(scopes)&redirect_uri=\(redirectURI)&show_dialog=TRUE"
+        let string = "\(base)?response_type=code&client_id=\(Constant.clientID)&scope=\(Constant.scopes)&redirect_uri=\(Constant.redirectURI)&show_dialog=TRUE"
         return URL(string: string)
         
     }
@@ -48,29 +46,24 @@ final class AuthManager {
     
     public func exchangeCodeForToken(code: String, completion: @escaping((Bool)->Void)){
         //Get token
-        print("runned")
         guard let url = URL(string: Constant.tokenAPIURL) else {
             print("url error")
             return
         }
-        print("runned")
-
         var components = URLComponents()
         components.queryItems = [
-                URLQueryItem(name: "grant_type",
-                             value: "authorization_code"),
-                URLQueryItem(name: "code",
-                             value: code),
-                URLQueryItem(name: "redirect_uri",
-                             value: "https://www.google.com")
+            URLQueryItem(name: "grant_type", value: "authorization_code"),
+            URLQueryItem(name: "code", value: code),
+            URLQueryItem(name: "redirect_uri", value: Constant.redirectURI)
         ]
+        
+        
         
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded ", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpBody = components.query?.data(using: .utf8)
-
         
         let basicToken = Constant.clientID+":"+Constant.clientSecret
         let data = basicToken.data(using: .utf8)
@@ -79,8 +72,8 @@ final class AuthManager {
             completion(false)
             return
         }
+        request.setValue("Basic \(base64String)", forHTTPHeaderField: "Authorization")
         
-       
         let task = URLSession.shared.dataTask(with: request) {[weak self] data, _, error in
             guard let data = data, error == nil else{
                 print("data error")
@@ -88,9 +81,8 @@ final class AuthManager {
                 return
             }
             do{
-                let result = try JSONDecoder().decode(AuthResponse.self,from:data)
-                self?.cacheToken(result: result)
-                print("success")
+                let result = try JSONDecoder().decode(AuthResponse.self, from: data)
+                self?.cacheToken(result: result )
                 completion(true)
             }
             catch {
@@ -100,15 +92,69 @@ final class AuthManager {
             }
         }
         task.resume()
-        
     }
-    public func refreshAccessToken(){
+  
+    public func refreshIfNeeded(completion: @escaping(Bool) -> Void){
+       
+        guard let refreshToken = self.refreshToken else {
+            return
+        }
         
+        //Refresh token
+        guard let url = URL(string: Constant.tokenAPIURL) else {
+            print("url error")
+            return
+        }
+        var components = URLComponents()
+        components.queryItems = [
+            URLQueryItem(name: "grant_type", value: "refresh_token"),
+            URLQueryItem(name: "refresh_token", value: refreshToken)
+        ]
+        
+        
+        
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpBody = components.query?.data(using: .utf8)
+        
+        let basicToken = Constant.clientID+":"+Constant.clientSecret
+        let data = basicToken.data(using: .utf8)
+        guard let base64String = data?.base64EncodedString() else {
+            print("Failure to get base64")
+            completion(false)
+            return
+        }
+        request.setValue("Basic \(base64String)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) {[weak self] data, _, error in
+            guard let data = data, error == nil else{
+                print("data error")
+                completion(false)
+                return
+            }
+            do{
+                let result = try JSONDecoder().decode(AuthResponse.self, from: data)
+                self?.cacheToken(result: result )
+                completion(true)
+            }
+            catch {
+                print("error:\(error.localizedDescription)")
+                completion(false)
+                
+            }
+        }
+        task.resume()
     }
     private func cacheToken(result: AuthResponse){
-        UserDefaults.setValue(result.access_token, forKey: "access_token")
-        UserDefaults.setValue(result.refresh_token, forKey: "refresh_token")
-        UserDefaults.setValue(Date().addingTimeInterval(TimeInterval(result.expires_in)),
+        UserDefaults.standard.setValue(result.access_token, forKey: "access_token")
+        
+        if let refresh_token = result.refresh_token {
+            UserDefaults.standard.setValue(result.refresh_token, forKey: "refresh_token")
+
+        }
+        UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expires_in)),
                               forKey: "expirationDate")
 
     }

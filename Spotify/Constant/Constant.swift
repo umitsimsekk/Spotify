@@ -8,7 +8,10 @@
 import Foundation
 
 struct Constant {
-    public static let clientID = "44638e191eca41b1b06c304a9bd7a91f"
-    public static let clientSecret = "9c47145be25c464b967defe192dc5729"
+    public static let clientID = "5fd92e651d5146fbb870e4fe78120a8c"
+    public static let clientSecret = "2c8f92dead2d47e2a781e3b4ae385902"
     public static let tokenAPIURL = "https://accounts.spotify.com/api/token"
+    public static let redirectURI = "https://www.google.com"
+    public static let scopes = "user-read-private%20playlist-modify-public%20playlist-read-private%20playlist-modify-private%20user-follow-read%20user-library-modify%20user-library-read%20user-read-email"
+
 }
