@@ -13,6 +13,7 @@ final class AuthManager {
     
     private init() {}
     
+    private var refreshingToken = false
     public var signInURL: URL? {
         let base = "https://accounts.spotify.com/authorize"
         let string = "\(base)?response_type=code&client_id=\(Constant.clientID)&scope=\(Constant.scopes)&redirect_uri=\(Constant.redirectURI)&show_dialog=TRUE"
@@ -93,13 +94,36 @@ final class AuthManager {
         }
         task.resume()
     }
-  
+    private var onRefreshBlocks = [((String) -> Void )]()
+    public func withValidToken(completion: @escaping(String)->Void){
+        guard !refreshingToken else {
+            onRefreshBlocks.append(completion)
+            return
+        }
+        if shouldRefreshToken {
+            refreshIfNeeded { [weak self] success in
+                if let token = self?.accessToken,success {
+                    completion(token)
+                }
+            }
+        } else if let token = accessToken {
+            completion(token)
+        }
+        
+        
+    }
     public func refreshIfNeeded(completion: @escaping(Bool) -> Void){
-       
+        guard !refreshingToken else {
+            return
+        }
+        guard shouldRefreshToken else {
+            completion(true)
+            return
+        }
         guard let refreshToken = self.refreshToken else {
             return
         }
-        
+        refreshingToken = true
         //Refresh token
         guard let url = URL(string: Constant.tokenAPIURL) else {
             print("url error")
@@ -129,6 +153,7 @@ final class AuthManager {
         request.setValue("Basic \(base64String)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) {[weak self] data, _, error in
+            self?.refreshingToken = false
             guard let data = data, error == nil else{
                 print("data error")
                 completion(false)
@@ -136,6 +161,8 @@ final class AuthManager {
             }
             do{
                 let result = try JSONDecoder().decode(AuthResponse.self, from: data)
+                self?.onRefreshBlocks.forEach { $0(result.access_token)}
+                self?.onRefreshBlocks.removeAll()
                 self?.cacheToken(result: result )
                 completion(true)
             }
