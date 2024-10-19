@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9E5C5A3AB9DD5BD88172D110 /* Pods_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D6F1217E972855CAAA4DF /* Pods_Spotify.framework */; };
+		DB04E6632CC469B100BA3920 /* NewReleasesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB04E6622CC469B100BA3920 /* NewReleasesResponse.swift */; };
+		DB04E6652CC46A4900BA3920 /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB04E6642CC46A4900BA3920 /* APIImage.swift */; };
 		DB1CE6B02CAEA8780024FCDF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1CE6AF2CAEA8780024FCDF /* TabBarController.swift */; };
 		DB1CE6B22CAEA8DF0024FCDF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1CE6B12CAEA8DF0024FCDF /* SearchViewController.swift */; };
 		DB1CE6B42CAEA8F90024FCDF /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1CE6B32CAEA8F90024FCDF /* LibraryViewController.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		3AFFD44C5FDBEF80ADEF7C6F /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		977100B2877DDFC91A014C8F /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
+		DB04E6622CC469B100BA3920 /* NewReleasesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesResponse.swift; sourceTree = "<group>"; };
+		DB04E6642CC46A4900BA3920 /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
 		DB1CE6AF2CAEA8780024FCDF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DB1CE6B12CAEA8DF0024FCDF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DB1CE6B32CAEA8F90024FCDF /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				DB1CE6D02CAEAA780024FCDF /* UserProfile.swift */,
 				DBE35C832CB5EF2F008342EA /* AuthResponse.swift */,
 				DB735C802CC0368C009D9727 /* SettingsModel.swift */,
+				DB04E6622CC469B100BA3920 /* NewReleasesResponse.swift */,
+				DB04E6642CC46A4900BA3920 /* APIImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,7 +349,9 @@
 				DB1CE6C52CAEAA080024FCDF /* AuthManager.swift in Sources */,
 				DB1CE6B92CAEA9700024FCDF /* WelcomeViewController.swift in Sources */,
 				DB6660862CAA073B00A7F349 /* HomeViewController.swift in Sources */,
+				DB04E6652CC46A4900BA3920 /* APIImage.swift in Sources */,
 				DB1CE6C92CAEAA1D0024FCDF /* HapticsManager.swift in Sources */,
+				DB04E6632CC469B100BA3920 /* NewReleasesResponse.swift in Sources */,
 				DB1CE6B02CAEA8780024FCDF /* TabBarController.swift in Sources */,
 				DB1CE6B72CAEA9630024FCDF /* AuthViewController.swift in Sources */,
 				DB1CE6CD2CAEAA620024FCDF /* AudioTrack.swift in Sources */,

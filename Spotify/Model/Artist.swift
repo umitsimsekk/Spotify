@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Artist: Codable{
+    let id: String
+    let type: String
+    let name: String
+    let external_urls: [String: String]
+}
