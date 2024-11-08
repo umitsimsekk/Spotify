@@ -32,6 +32,8 @@
 		DB6660862CAA073B00A7F349 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660852CAA073B00A7F349 /* HomeViewController.swift */; };
 		DB66608B2CAA073C00A7F349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB66608A2CAA073C00A7F349 /* Assets.xcassets */; };
 		DB66608E2CAA073C00A7F349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB66608C2CAA073C00A7F349 /* LaunchScreen.storyboard */; };
+		DB6966592CDE15AB00CEDA7F /* FeaturedPlayListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6966582CDE15AB00CEDA7F /* FeaturedPlayListResponse.swift */; };
+		DB69665B2CDE1A9E00CEDA7F /* RecomendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB69665A2CDE1A9E00CEDA7F /* RecomendedGenresResponse.swift */; };
 		DB735C812CC0368C009D9727 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB735C802CC0368C009D9727 /* SettingsModel.swift */; };
 		DBDCECC72CB0006C00C5B6A4 /* Extention+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDCECC62CB0006C00C5B6A4 /* Extention+UIView.swift */; };
 		DBDCECCA2CB0010A00C5B6A4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDCECC92CB0010A00C5B6A4 /* Constant.swift */; };
@@ -67,6 +69,8 @@
 		DB66608A2CAA073C00A7F349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB66608D2CAA073C00A7F349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB66608F2CAA073C00A7F349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB6966582CDE15AB00CEDA7F /* FeaturedPlayListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayListResponse.swift; sourceTree = "<group>"; };
+		DB69665A2CDE1A9E00CEDA7F /* RecomendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedGenresResponse.swift; sourceTree = "<group>"; };
 		DB735C802CC0368C009D9727 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		DBDCECC62CB0006C00C5B6A4 /* Extention+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+UIView.swift"; sourceTree = "<group>"; };
 		DBDCECC92CB0010A00C5B6A4 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				DB735C802CC0368C009D9727 /* SettingsModel.swift */,
 				DB04E6622CC469B100BA3920 /* NewReleasesResponse.swift */,
 				DB04E6642CC46A4900BA3920 /* APIImage.swift */,
+				DB6966582CDE15AB00CEDA7F /* FeaturedPlayListResponse.swift */,
+				DB69665A2CDE1A9E00CEDA7F /* RecomendedGenresResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 				DB1CE6C52CAEAA080024FCDF /* AuthManager.swift in Sources */,
 				DB1CE6B92CAEA9700024FCDF /* WelcomeViewController.swift in Sources */,
 				DB6660862CAA073B00A7F349 /* HomeViewController.swift in Sources */,
+				DB69665B2CDE1A9E00CEDA7F /* RecomendedGenresResponse.swift in Sources */,
 				DB04E6652CC46A4900BA3920 /* APIImage.swift in Sources */,
 				DB1CE6C92CAEAA1D0024FCDF /* HapticsManager.swift in Sources */,
 				DB04E6632CC469B100BA3920 /* NewReleasesResponse.swift in Sources */,
@@ -365,6 +372,7 @@
 				DB1CE6BB2CAEA97C0024FCDF /* SettingsViewController.swift in Sources */,
 				DBDCECC72CB0006C00C5B6A4 /* Extention+UIView.swift in Sources */,
 				DB1CE6C32CAEA9CF0024FCDF /* SearchResultViewController.swift in Sources */,
+				DB6966592CDE15AB00CEDA7F /* FeaturedPlayListResponse.swift in Sources */,
 				DBDCECCA2CB0010A00C5B6A4 /* Constant.swift in Sources */,
 				DB1CE6C72CAEAA130024FCDF /* APICaller.swift in Sources */,
 				DBE35C842CB5EF2F008342EA /* AuthResponse.swift in Sources */,
