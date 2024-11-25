@@ -27,6 +27,7 @@
 		DB1CE6CD2CAEAA620024FCDF /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1CE6CC2CAEAA620024FCDF /* AudioTrack.swift */; };
 		DB1CE6CF2CAEAA6E0024FCDF /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1CE6CE2CAEAA6E0024FCDF /* Artist.swift */; };
 		DB1CE6D12CAEAA780024FCDF /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1CE6D02CAEAA780024FCDF /* UserProfile.swift */; };
+		DB521F652CE4AB690075DA8E /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB521F642CE4AB690075DA8E /* NewReleasesCellViewModel.swift */; };
 		DB6568102CE0128300A0C7D9 /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65680F2CE0128300A0C7D9 /* RecommendationsResponse.swift */; };
 		DB6660822CAA073B00A7F349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660812CAA073B00A7F349 /* AppDelegate.swift */; };
 		DB6660842CAA073B00A7F349 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660832CAA073B00A7F349 /* SceneDelegate.swift */; };
@@ -66,6 +67,7 @@
 		DB1CE6CC2CAEAA620024FCDF /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		DB1CE6CE2CAEAA6E0024FCDF /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		DB1CE6D02CAEAA780024FCDF /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		DB521F642CE4AB690075DA8E /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
 		DB65680F2CE0128300A0C7D9 /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
 		DB66607E2CAA073B00A7F349 /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6660812CAA073B00A7F349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		DB1CE6AA2CAEA6B70024FCDF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DB521F642CE4AB690075DA8E /* NewReleasesCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB521F652CE4AB690075DA8E /* NewReleasesCellViewModel.swift in Sources */,
 				DB735C812CC0368C009D9727 /* SettingsModel.swift in Sources */,
 				DBA667812CE4141200A36384 /* NewReleaseCollectionViewCell.swift in Sources */,
 				DBA667852CE4144100A36384 /* RecommendedTrackCollectionViewCell.swift in Sources */,
